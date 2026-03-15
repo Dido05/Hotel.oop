@@ -1,5 +1,6 @@
 package bg.tu_varna.sit.f24621715;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,5 +33,26 @@ public class Room {
 
     public List<UnavailablePeriod> getUnavailablePeriods() {
         return unavailablePeriods;
+    }
+
+    public boolean isAvailable(LocalDate from, LocalDate to) {
+
+        for (Stay stay : stays) {
+            if (stay.overlaps(from, to)) {
+                return false;
+            }
+        }
+
+        for (UnavailablePeriod p : unavailablePeriods) {
+            if (p.overlaps(from, to)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void addStay(Stay stay) {
+        stays.add(stay);
     }
 }

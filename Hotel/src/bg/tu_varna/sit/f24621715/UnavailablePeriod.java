@@ -13,6 +13,10 @@ public class UnavailablePeriod {
         this.to = to;
         this.note = note;
     }
+
+    public boolean overlaps(LocalDate from, LocalDate to) {
+        return !(to.isBefore(this.from) || from.isAfter(this.to));
+    }
 }
 
 

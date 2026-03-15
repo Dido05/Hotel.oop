@@ -31,4 +31,8 @@ public class Stay {
     public int getGuests() {
         return guests;
     }
+
+    public boolean overlaps(LocalDate from, LocalDate to) {
+        return !(to.isBefore(this.from) || from.isAfter(this.to));
+    }
 }
