@@ -9,11 +9,11 @@ public class Stay {
     private String note;
     private int guests;
 
-    public Stay(LocalDate from, int guests, String note, LocalDate to) {
+    public Stay(LocalDate from, LocalDate to, String note, int guests) {
         this.from = from;
-        this.guests = guests;
-        this.note = note;
         this.to = to;
+        this.note = note;
+        this.guests = guests;
     }
 
     public LocalDate getFrom() {
