@@ -19,7 +19,6 @@ public class Main {
                 2
         );
 
-
         boolean success = hotel.checkIn(roomNumber, stay);
 
         if (success) {

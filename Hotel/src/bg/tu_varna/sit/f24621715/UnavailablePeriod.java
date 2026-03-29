@@ -17,6 +17,14 @@ public class UnavailablePeriod {
     public boolean overlaps(LocalDate from, LocalDate to) {
         return !(to.isBefore(this.from) || from.isAfter(this.to));
     }
+
+    public LocalDate getFrom() {
+        return from;
+    }
+
+    public LocalDate getTo() {
+        return to;
+    }
 }
 
 
